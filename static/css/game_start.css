@@ -1,0 +1,45 @@
+/* ---------- Color choice ---------- */
+
+#choice-container {
+    display: flex;
+        justify-content: space-evenly;
+    margin-top: 7em;
+}
+
+#team1-choice, #team2-choice {
+    background-color: rgb(9, 9, 9);
+    border: 3px solid rgb(9, 9, 9);
+    box-shadow: 4px 4px 4px rgb(22, 22, 22);
+    padding: 1.2em;    
+    text-decoration: none;
+    transition: 1s;
+}
+
+#team1-choice:hover, #team2-choice:hover {
+    transform: scale(1.15);
+    box-shadow: 4.5px 4.5px 4px rgb(22, 22, 22);
+}
+
+#team1-choice > div {
+    border: 3px solid blue;
+    border-radius: 60%;
+    padding: 9em;
+}
+
+#team2-choice > div {
+    border: 3px solid red;
+    border-radius: 60%;
+    padding: 9em;
+}
+
+#team1-choice > p {
+    color: blue;
+    text-align: center;
+    font-size: 30px;
+}
+
+#team2-choice > p {
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}

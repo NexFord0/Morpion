@@ -1,0 +1,196 @@
+body {
+    background-image: linear-gradient(90deg, blue, red);
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------- Navigation bar ---------- */
+
+#navigation-container {
+    display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    position: absolute;
+        top: 1em;
+        right: 1em;
+}
+
+#informations-container {
+    display: flex; 
+        flex-direction: row-reverse;
+        align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 1.5em;
+}
+
+.information {
+    color: rgb(9, 9, 9);
+    display: none;
+}
+
+#powers {
+    margin-right: 0.5em;
+}
+
+#colors {
+    color: rgb(9, 9, 9);
+    text-decoration: none;
+    transition: 1s;
+}
+
+.info1 {
+    color: rgb(9, 9, 9);
+    font-size: 23px;
+    padding: 0.3em;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.info1:hover, #colors:hover {
+    background-color: rgb(190, 132, 23);
+}
+
+#img-gears {
+    transition: 1s;
+}
+
+#team2-color {
+    margin-top: 1em;
+}
+
+#day-container {
+    border: 2px solid rgb(9, 9, 9);
+    border-radius: 3%;
+    margin-left: 22.5%;
+    width: 15%;
+}
+
+#morning-night {
+    background-color: rgb(9, 9, 9);
+    border: 2px solid rgb(9, 9, 9);
+    border-radius: 3%;
+    margin-left: 0.1em;
+    padding: 0.5em;
+    transition: 0.75s;
+    transform: translate(0, 60%);
+}
+
+input {
+    border-color: rgb(9, 9, 9);
+    width: 13em;
+}
+
+audio {
+    width: 8em;
+}
+
+
+/* ---------- Timer ---------- */
+
+#timer-container {
+    display: none;
+        justify-content: center;
+    margin-top: 2em;
+}
+
+#timer-container > span {
+    background-color: rgb(9, 9, 9);
+    border: 3px solid rgb(9, 9, 9);
+    box-shadow: 4px 4px 4px rgb(22, 22, 22);
+    color: rgb(190, 132, 23);
+    font-size: 60px;
+    transition: 1s;
+}
+
+#minutes {
+    padding-left: 0.3em;
+    padding-right: 0.1em;
+}
+
+#seconds {
+    padding-left: 0.1em;
+    padding-right: 0.3em;
+}
+
+
+/* ---------- Colors Alternator ---------- */
+
+#alternator-container {
+    background-color: rgb(9, 9, 9);
+    border: 3px solid rgb(9, 9, 9);
+    box-shadow: 4px 4px 4px rgb(22, 22, 22);
+    color: antiquewhite;
+    display: none;
+    font-size: 26px;
+    padding: 0.5em;
+    position: absolute;
+        top: 0.7em;
+        left: 0.7em;
+    text-align: center;
+    transition: 1s;
+    width: 6em;
+}
+
+
+/* ---------- Board ---------- */
+
+#board-container {
+    display: none;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 2em;
+}
+
+#board {
+    background-color: rgb(233, 233, 233);
+    border: 3px solid rgb(9, 9, 9);
+    border-radius: 3%;
+    box-shadow: 4px 4px 4px rgb(22, 22, 22);
+    display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+    transition: 1s;
+}
+
+#board > a {
+    border: 3px solid rgb(9, 9, 9);
+    border-radius: 3%;
+    padding: 4em;
+    transition: 1s;
+}
+
+#team1-points, #team2-points {
+    background-color: rgb(9, 9, 9);
+    border: 3px solid rgb(9, 9, 9);
+    box-shadow: 4px 4px 4px rgb(22, 22, 22);
+    padding-top : 0.8em;
+    padding-bottom: 0.8em;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    color: rgb(190, 132, 23);
+    font-size: 100px;
+    transition: 1s;
+}
+
+#team1-side, #team2-side {
+    display: flex;
+        flex-direction: column;
+}
+
+#team1-power, #team2-power {
+    align-self: center;
+    border: 2px solid rgb(9, 9, 9);
+    cursor: pointer;
+    display: none;
+    position: absolute;
+        top: 10em;
+    transition: 0.7s;
+    transform: translate(25%, 0);
+}
+
+#img-pouv-team1, #img-pouv-team2 {
+    padding-top: 0.2em;
+}

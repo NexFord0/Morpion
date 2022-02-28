@@ -1,0 +1,28 @@
+@media (max-width: 500px) {
+    
+    #choice-container {
+        flex-direction: column;
+    }
+
+    #team2-choice {
+        margin-top: 3em;
+    }
+
+    #team1-choice > div {
+        border-radius: 60%;
+        padding: 12em;
+    }
+    
+    #team2-choice > div {
+        border-radius: 60%;
+        padding: 12em;
+    }
+
+    #show-colors {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #alternator-container {
+        position: static;
+    }
+}

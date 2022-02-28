@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/game_start.css">
+    <link rel="stylesheet" href="static/css/board_styles.css">
+    <link rel="stylesheet" href="static/css/rules_&_powers_&_colors.css">
+    <link rel="stylesheet" href="static/css/responsive.css">
+    <title>Tic-tac-toe</title>
+</head>
+<body>
+
+
+    <!---------- Color choice ---------->
+
+    <div id="choice-container">
+        <a href="#" class="start" id="team1-choice">
+            <p id="team1-start"></p>
+            <div id="team1-div"></div>
+        </a>
+        <a href="#" class="start" id="team2-choice">
+            <p id="team2-start"></p>   
+            <div id="team2-div"></div>
+        </a>
+    </div>
+
+
+    <!---------- Navigation bar ---------->
+
+    <nav id="navigation-container">
+        <ul id="informations-container">
+            <a href="#" id="gears"><img src="static/images_audios/imageGear1.png" id="img-gears"></a>
+            <a href="#" class="information info1" id="powers">Powers</a>
+            <a href="#" class="information info1" id="rules">Rules</a>
+            <a href="board_game.html" class="information info1" id="reload">Reload</a>
+        </ul>
+        <input type="text" class="information" id="team1-color" placeholder="Team 1 new color :">
+        <input type="text" class="information" id="team2-color" placeholder="Team 2 new color :">
+
+        <ul>
+            <a href="#" class="information" id="colors">Colors available</a>
+        </ul>
+
+        <div class="information" id="day-container">
+            <a href="#" class="information" id="morning-night"></a>
+        </div>
+
+        <ul>
+            <audio controls autoplay loop src="static/images_audios/audioAction.mp3" class="information"></audio>
+        </ul>
+    </nav>
+
+
+    <!---------- Timer ---------->
+
+    <div id="timer-container">
+        <span id="minutes">00</span> 
+        <span id="separateur">:</span> 
+        <span id="seconds">00</span>
+    </div>
+
+
+    <!---------- Colors Alternator ---------->
+
+    <div id="alternator-container">
+    </div>
+    
+
+    <!---------- Board ---------->
+
+    <div id="board-container">
+
+        <div id="team1-side">
+            <div id="team1-points">0</div>
+            <button id="team1-power"><img src="" id="img-pouv-team1"></button>
+        </div>
+
+        <div id="board">
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>
+            <a href="#" class="cell"></a>  
+        </div>
+
+        <div id="team2-side">
+            <div id="team2-points">0</div>
+            <button id="team2-power"><img src="" id="img-pouv-team2"></button>
+        </div>
+
+    </div> 
+
+
+    <!---------- Read rules ---------->
+
+    <div id="rules-container">
+
+        <h2 id="rules-title">Rules explanation <button id="leave-rules">&#10006</button></h2>
+
+        <p id="rules-explanation">Games played on three-in-a-row boards can be traced back to 
+        ancient Egypt, where such game boards have been found on roofing tiles dating from 
+        around 1300 BC. An early variation of tic-tac-toe was played in the Roman Empire, 
+        around the first century BC. It was called terni lapilli (three pebbles at a time)
+        and instead of having any number of pieces, each player had only three; thus, they
+        had to move them around to empty spaces to keep playing. The game's grid markings
+        have been found chalked all over Rome. <br><br>
+           
+        Another closely related ancient game is three men's morris which is also played on 
+        a simple grid and requires three pieces in a row to finish, and Picaria, a game of 
+        the Puebloans. <br><br>
+    
+        Tic-tac-toe (American English), noughts and crosses (Commonwealth English), or Xs and 
+        Os (Irish English) is a paper-and-pencil game for two players who take turns marking 
+        the spaces in a three-by-three grid with X or O. The player who succeeds in placing 
+        three of their marks in a horizontal, vertical, or diagonal row is the winner. It is 
+        a solved game, with a forced draw assuming best play from both players. <br><br>
+        
+        A team acquires a power when they lost a match : right now, there is three different
+        powers in the game !</p>
+
+        <div id="rules-demonstration">
+            <div class="example-red"></div>
+            <div class="example-red"></div>
+            <div class="example-blue"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-black"></div>
+            <div class="example-red"></div>
+        </div>
+        <legend>Example of a win by Team blue</legend>
+    </div>
+
+
+    <!---------- Read powers ---------->
+
+    <div id="powers-container">
+
+        <h2 id="powers-title">Powers explanation <button id="leave-powers">&#10006</button></h2>
+
+        <p id="powers-explanation"><span class="bold">First power : Shot fired</span> <br><br>
+        Two cells, one belonging to Team 1 and one belonging to Team 2 are reinitialized. On the 
+        example below, the cells highlighted in gold are the ones that undergo the power's effect. <br><br>
+    
+        Shot fired power can be identify thanks to this icon : <img src="static/images_audios/imageShotFired.png"></p>
+    
+        <div id="powers-demonstration">
+            <div class="example-red highlighted"></div>
+            <div class="example-black"></div>
+            <div class="example-black"></div>
+            <div class="example-black"></div>
+            <div class="example-blue highlighted"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-red"></div>
+            <div class="example-red"></div>
+        </div>
+        <legend>Before the use of Shot fired</legend>
+
+        <div id="powers-demonstration">
+            <div class="example-black highlighted"></div>
+            <div class="example-black"></div>
+            <div class="example-black"></div>
+            <div class="example-black"></div>
+            <div class="example-black highlighted"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-red"></div>
+            <div class="example-red"></div>
+        </div>
+        <legend>After the use of Shot fired</legend>
+
+        <p id="powers-explanation" style="margin-top: 2em;"><span class="bold">Second power : Sabotage</span> <br><br>
+        Half of the available cells on the board are blocked. On the example below, the cells 
+        highlighted in gold are the ones that undergo the power's effect. <br><br>
+   
+        Sabotage power can be identify thanks to this icon : <img src="static/images_audios/imageSabotage.png"></p>
+        
+        <div id="powers-demonstration">
+            <div class="example-red"></div>
+            <div class="example-blue"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-black highlighted"></div>
+            <div class="example-black"></div>
+            <div class="example-red"></div>
+            <div class="example-red"></div>
+            <div class="example-black highlighted"></div>
+       </div>
+        <legend>Before the use of Permutation</legend>
+    
+        <div id="powers-demonstration">
+            <div class="example-red"></div>
+            <div class="example-blue"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-sabotaged highlighted"></div>
+            <div class="example-black"></div>
+            <div class="example-red"></div>
+            <div class="example-red"></div>
+            <div class="example-sabotaged highlighted"></div>
+        </div>
+        <legend>After the use of Permutation</legend>
+
+        <p id="powers-explanation" style="margin-top: 2em;"><span class="bold">Third power : Phantom</span> <br><br>
+        Both teams' cells become invisible. <br><br>
+        Phantom power can be identify thanks to this icon : <img src="static/images_audios/imagePhantom.png"></p>
+            
+        <div id="powers-demonstration">
+            <div class="example-black"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-blue"></div>
+            <div class="example-red"></div>
+            <div class="example-red"></div>
+            <div class="example-black"></div>
+            <div class="example-blue"></div>
+            <div class="example-red"></div>
+        </div>
+        <legend>Before the use of Phantom</legend>
+        
+        <div id="powers-demonstration">
+            <div class="example-black opacity"></div>
+            <div class="example-black opacity"></div>
+            <div class="example-blue opacity"></div>
+            <div class="example-blue opacity"></div>
+            <div class="example-red opacity"></div>
+            <div class="example-red opacity"></div>
+            <div class="example-black opacity"></div>
+            <div class="example-blue opacity"></div>
+            <div class="example-red opacity"></div>
+        </div>
+        <legend>After the use of Phantom</legend>
+
+    </div>
+
+
+    <!---------- Look at colors ---------->
+
+    <div id="colors-container">
+
+        <h2 id="colors-title">Colors available <button id="leave-colors">&#10006</button></h2>
+
+        <div id="show-colors"> 
+            <div style="background-color: aqua;"><p>Aqua</p></div>
+            <div style="background-color: aquamarine;"><p>Aqua Marine</p></div>
+            <div style="background-color: bisque;"><p>Bisque</p></div>
+            <div style="background-color: blue;"><p>Blue</p></div>
+            <div style="background-color: blueviolet;"><p>Blue Violet</p></div> 
+
+            <div style="background-color: brown;"><p>Brown</p></div>
+            <div style="background-color: burlywood;"><p>Burly Wood</p></div>
+            <div style="background-color: cadetblue;"><p>Cadet Blue</p></div>
+            <div style="background-color: chartreuse;"><p>Chartreuse</p></div>
+            <div style="background-color: chocolate;"><p>Chocolate</p></div>
+
+            <div style="background-color: coral;"><p>Coral</p></div>
+            <div style="background-color: crimson;"><p>Crimson</p></div>
+            <div style="background-color: cyan;"><p>Cyan</p></div>
+            <div style="background-color: darkblue;"><p>Dark Blue</p></div>
+            <div style="background-color: darkcyan;"><p>Dark Cyan</p></div>
+
+            <div style="background-color: darkgoldenrod;"><p>Dark Golden Rod</p></div>
+            <div style="background-color: darkgray;"><p>Dark Gray</p></div>
+            <div style="background-color: darkgrey;"><p>Dark Grey</p></div>
+            <div style="background-color: darkgreen;"><p>Dark Green</p></div>
+            <div style="background-color: darkkhaki;"><p>Dark Khaki</p></div>
+
+            <div style="background-color: darkmagenta;"><p>Dark Magenta</p></div>
+            <div style="background-color: darkorange;"><p>Dark Orange</p></div>
+            <div style="background-color: darkorchid;"><p>Dark Orchid</p></div>
+            <div style="background-color: darkred;"><p>Dark Red</p></div>
+            <div style="background-color: darksalmon;"><p>Dark Salmon</p></div>
+
+            <div style="background-color: darkseagreen;"><p>Dark Sea Green</p></div>
+            <div style="background-color: darkslateblue;"><p>Dark Slate Blue</p></div>
+            <div style="background-color: darkslategray;"><p>Dark Slate Gray</p></div>
+            <div style="background-color: darkslategrey;"><p>Dark Slate Grey</p></div>
+            <div style="background-color: darkturquoise;"><p>Dark Turquoise</p></div>
+
+            <div style="background-color: darkviolet;"><p>Dark Violet</p></div>
+            <div style="background-color: deeppink;"><p>Deep Pink</p></div>
+            <div style="background-color: deepskyblue;"><p>Deep Sky Blue</p></div>
+            <div style="background-color: dimgray;"><p>Dim Gray</p></div>
+            <div style="background-color: dimgrey;"><p>Dim Grey</p></div>
+
+            <div style="background-color: dodgerblue;"><p>Dodger Blue</p></div>
+            <div style="background-color: firebrick;"><p>Fire Brick</p></div>
+            <div style="background-color: forestgreen;"><p>Forest Green</p></div>
+            <div style="background-color: fuchsia;"><p>Fuchsia</p></div>
+            <div style="background-color: gainsboro;"><p>Gains Boro</p></div>
+
+            <div style="background-color: gold;"><p>Gold</p></div>
+            <div style="background-color: goldenrod;"><p>Golden Rod</p></div>
+            <div style="background-color: gray;"><p>Gray</p></div>
+            <div style="background-color: grey ;"><p>Grey</p></div>
+            <div style="background-color: green;"><p>Green</p></div>
+
+            <div style="background-color: greenyellow;"><p>Green Yellow</p></div>
+            <div style="background-color: hotpink;"><p>Hot Pink</p></div>
+            <div style="background-color: indianred;"><p>Indian Red</p></div>
+            <div style="background-color: indigo;"><p>Indigo</p></div>
+            <div style="background-color: khaki;"><p>Khaki</p></div>
+
+            <div style="background-color: lawngreen;"><p>Lawn Green</p></div>
+            <div style="background-color: lightblue;"><p>Light Blue</p></div>
+            <div style="background-color: lightcoral;"><p>Light Coral</p></div>
+            <div style="background-color: lightcyan;"><p>Light Cyan</p></div>
+            <div style="background-color: lightgray ;"><p>Light Gray</p></div>
+
+            <div style="background-color: lightgrey;"><p>Light Grey</p></div>
+            <div style="background-color: lightgreen;"><p>Light Green</p></div>
+            <div style="background-color: lightpink;"><p>Light Pink</p></div>
+            <div style="background-color: lightsalmon;"><p>Light Salmon</p></div>
+            <div style="background-color: lightseagreen;"><p>Light Sea Green</p></div>
+
+            <div style="background-color: lightskyblue;"><p>Light Sky Blue</p></div>
+            <div style="background-color: lime;"><p>Lime</p></div>
+            <div style="background-color: limegreen;"><p>Lime Green</p></div>
+            <div style="background-color: magenta;"><p>Magenta</p></div>
+            <div style="background-color: maroon;"><p>Maroon</p></div>
+
+            <div style="background-color: mediumaquamarine;"><p>Medium Aquamarine</p></div>
+            <div style="background-color: mediumblue;"><p>Medium Blue</p></div>
+            <div style="background-color: mediumorchid;"><p>Medium Orchid</p></div>
+            <div style="background-color: mediumpurple;"><p>Medium Purple</p></div>
+            <div style="background-color: midnightblue;"><p>Midnight Blue</p></div>
+
+            <div style="background-color: navy;"><p>Navy</p></div>
+            <div style="background-color: olive;"><p>Olive</p></div>
+            <div style="background-color: olivedrab;"><p>Olive Drab</p></div>
+            <div style="background-color: orange;"><p>Orange</p></div>
+            <div style="background-color: orangered;"><p>Orange Red</p></div>
+
+            <div style="background-color: orchid;"><p>Orchid</p></div>
+            <div style="background-color: palegoldenrod;"><p>Pale Golden Rod</p></div>
+            <div style="background-color: palegreen;"><p>Pale Green</p></div>
+            <div style="background-color: paleturquoise;"><p>Pale Turquoise</p></div>
+            <div style="background-color: palevioletred;"><p>Pale Violet Red</p></div>
+
+            <div style="background-color: peachpuff;"><p>Peach Puff</p></div>
+            <div style="background-color: peru;"><p>Peru</p></div>
+            <div style="background-color: pink;"><p>Pink</p></div>
+            <div style="background-color: plum;"><p>Plum</p></div>
+            <div style="background-color: powderblue;"><p>Powder Blue</p></div>
+
+            <div style="background-color: purple;"><p>Purple</p></div>
+            <div style="background-color: rebeccapurple;"><p>Rebecca Purple</p></div>
+            <div style="background-color: red;"><p>Red</p></div>
+            <div style="background-color: rosybrown;"><p>Rosy Brown</p></div>
+            <div style="background-color: royalblue;"><p>Royal Blue</p></div>
+
+            <div style="background-color: saddlebrown;"><p>Saddle Brown</p></div>
+            <div style="background-color: salmon;"><p>Salmon</p></div>
+            <div style="background-color: sandybrown;"><p>Sandy Brown</p></div>
+            <div style="background-color: seagreen;"><p>Sea Green</p></div>
+            <div style="background-color: sienna;"><p>Sienna</p></div>
+
+            <div style="background-color: silver;"><p>Silver</p></div>
+            <div style="background-color: skyblue;"><p>Sky Blue</p></div>
+            <div style="background-color: slateblue;"><p>Slate Blue</p></div>
+            <div style="background-color: slategray;"><p>Slate Gray</p></div>
+            <div style="background-color: slategrey;"><p>Slate Grey</p></div>
+
+            <div style="background-color: springgreen;"><p>Spring Green</p></div>
+            <div style="background-color: steelblue;"><p>Steel Blue</p></div>
+            <div style="background-color: tan;"><p>Tan</p></div>
+            <div style="background-color: teal;"><p>Teal</p></div>
+            <div style="background-color: tomato;"><p>Tomato</p></div>
+
+            <div style="background-color: turquoise;"><p>Turquoise</p></div>
+            <div style="background-color: violet;"><p>Violet</p></div>
+            <div style="background-color: wheat;"><p>Wheat</p></div>
+            <div style="background-color: yellow;"><p>Yellow</p></div>
+            <div style="background-color: yellowgreen;"><p>Yellow Green</p></div>
+        </div>
+
+    </div>
+
+
+    <audio autoplay loop id="audio"></audio>
+
+    <script src="static/js/placed_tokens.js"></script>
+    <script src="static/js/victory_condition.js"></script>
+    <script src="static/js/events.js"></script>
+    <script src="static/js/powers.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+/*---------- Rules & Powers ----------*/
+
+#rules-container, #powers-container, #colors-container {
+    background-color: rgb(236, 236, 236);
+    display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+}
+
+#rules-title, #powers-title, #colors-title {
+    background-color: rgb(9, 9, 9);
+    color: rgb(190, 132, 23);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    position: fixed;
+        top: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+#rules-explanation, #powers-explanation {
+    background-color: rgb(210, 210, 210);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: justify;
+    width: 60%;
+}
+
+#show-colors {
+    display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(5, 1fr);
+    margin-top: 8em;
+    margin-bottom: 3em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#show-colors > div {
+    border-radius: 3%;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    padding: 3.5em;
+}
+
+#show-colors > div > p {
+    background-color: rgb(236, 236, 236);
+    border-radius: 3%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 0.5em;
+    text-align: center;
+}
+
+#rules-demonstration, #powers-demonstration {
+    background-color: rgb(233, 233, 233);
+    border: 3px solid rgb(22, 22, 22);
+    border-radius: 3%;
+    display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+    padding: 15px;
+}
+
+.example-blue {
+    border: 3px solid rgb(18, 18, 185);
+    border-radius: 60%;
+    padding: 4em;
+}
+
+.example-red {
+    border: 3px solid rgb(185, 18, 18);
+    border-radius: 60%;
+    padding: 4em;
+}
+
+.example-black {
+    border: 3px solid rgb(22, 22, 22);
+    border-radius: 3%;
+    padding: 4em;
+}
+
+.example-sabotaged {
+    border: 3px solid rgb(22, 22, 22);
+    border-top-left-radius: 60%;
+    border-bottom-right-radius: 60%;
+    padding: 4em;
+}
+
+legend {
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 2em;
+}
+
+#leave-rules, #leave-powers, #leave-colors {
+    border: 2px solid rgb(190, 132, 23);
+    color: rgb(190, 132, 23);
+    cursor: pointer;
+    padding: 0.4em;
+}
+
+.bold {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.highlighted {
+    background-color: rgb(245, 210, 10);
+}
+
+.opacity {
+    opacity: 0;
+}
